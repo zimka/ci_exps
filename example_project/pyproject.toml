@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "example_pack"
+description = "Example package"
+version = "0.1.0"
+authors = [
+    "Boris Zimka <zimka.b@ya.ru>"
+]
+packages = [
+    { include = "example_pack" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+addict = "2.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+mypy = "^0.990"
+black = "^22.0.0"
+pylint = "^2.10.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.pylint."MESSAGES CONTROL"]
+good-names = ["x"]
